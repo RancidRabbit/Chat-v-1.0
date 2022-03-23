@@ -1,0 +1,30 @@
+<?import javafx.geometry.Insets?>
+        <?import javafx.scene.control.*?>
+        <?import javafx.scene.layout.*?>
+<VBox fx:controller="RR.Controller"
+      xmlns:fx="http://javafx.com/fxml" spacing="10">
+
+<padding>
+    <Insets bottom="25" top="25" left="25" right="25"/>
+</padding>
+<MenuBar>
+    <Menu text="File">
+        <Menu text="Exit" onAction="#exit"/>
+    </Menu>
+</MenuBar>
+<HBox fx:id="loginBox" spacing="5" VBox.vgrow="ALWAYS">
+    <TextField fx:id="loginField" promptText="Login"/>
+    <PasswordField fx:id="passwordField" promptText="Password"/>
+    <Button text="Вход" defaultButton="true" onAction="#btnAuthClick"/>
+</HBox>
+<HBox fx:id="messageBox" visible="false" spacing="5">
+    <VBox spacing="5">
+        <TextArea fx:id="msgArea"  VBox.vgrow="ALWAYS" editable="false"/>
+        <HBox spacing="40">
+            <TextField fx:id="msgField" HBox.hgrow="ALWAYS"/>
+            <Button text="Send" onAction="#clickButton" defaultButton="true"/>
+        </HBox>
+    </VBox>
+    <ListView fx:id="clientList" minWidth="200" maxWidth="200" onMouseClicked="#selectClient"/>
+</HBox>
+</VBox>
